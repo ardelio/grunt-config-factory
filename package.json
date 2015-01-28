@@ -1,0 +1,26 @@
+{
+  "name": "grunt-configuration-loader",
+  "version": "0.1.0",
+  "description": "Reduce the size of Gruntfile.js by loading individual JSON configuration files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asceresini/grunt-configuration-loader.git"
+  },
+  "keywords": [
+    "grunt",
+    "configure",
+    "configuration",
+    "auto",
+    "loader"
+  ],
+  "author": "Anthony Sceresini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asceresini/grunt-configuration-loader/issues"
+  },
+  "homepage": "https://github.com/asceresini/grunt-configuration-loader"
+}
