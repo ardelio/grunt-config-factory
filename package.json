@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/asceresini/grunt-configuration-loader/issues"
   },
-  "homepage": "https://github.com/asceresini/grunt-configuration-loader"
+  "homepage": "https://github.com/asceresini/grunt-configuration-loader",
+  "dependencies": {
+    "lodash": "^3.0.0"
+  }
 }
