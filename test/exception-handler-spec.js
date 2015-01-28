@@ -1,30 +1,30 @@
 module.exports = {
   setUp: function (callback) {
-    this.Loader = require('../index.js');
+    this.Handler = require('../lib/exception-handler.js')();
     callback();
   },
   tearDown: function (callback) {
     callback();
   },
-  testNoParameterThrowsError: function (test) {
+  testThrowInvalidArgumentExceptionThrowsError: function (test) {
     var self = this;
     test.expect(1);
     test.throws(
       function() {
-        self.Loader();
+        self.Handler.throwInvalidArgument('a msg');
       },
       Error
     );
     test.done();
   },
-  testNoParameterThrowsCorrectErrorMessage: function (test) {
+  testThrowInvalidArgumentExceptionFormat: function (test) {
     var self = this;
     test.expect(1);
     test.throws(
       function() {
-        self.Loader();
+        self.Handler.throwInvalidArgument('a msg');
       },
-      /Please provide the directory where the JSON configurations are stored\./
+      /a msg/
     );
     test.done();
   }
