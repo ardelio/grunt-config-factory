@@ -1,4 +1,4 @@
-[![Build Status](https://snap-ci.com/asceresini/grunt-configuration-loader/branch/master/build_image)](https://snap-ci.com/asceresini/grunt-configuration-loader/branch/master)
+[![Build Status](https://snap-ci.com/asceresini/grunt-config-factory/branch/master/build_image)](https://snap-ci.com/asceresini/grunt-config-factory/branch/master)
 
-# grunt-configuration-loader
-Reduce the size of Gruntfile.js by loading individual JSON configuration files.
+# grunt-config-factory
+Reduce the size of Gruntfile.js by building a config from individual JSON configuration files.
