@@ -1,6 +1,6 @@
 {
   "name": "grunt-config-factory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reduce the size of Gruntfile.js by building a config from individual JSON configuration files.",
   "main": "index.js",
   "scripts": {
