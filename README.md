@@ -15,9 +15,11 @@ Create a directory within your project to house your individual JSON configurati
 mkdir grunt_config
 ```
 
-Create a JSON file which will house the plugin's configuration. _The filename must match the plugin configuration name_.
+Create a JSON file which will house the plugin's configuration.
 
-As an example, if we wanted to configure `grunt-contrib-connect`
+_Note: The filename must match the plugin's expected configuration property name_.
+
+As an example, if we wanted to configure `grunt-contrib-connect` we need to call the file `connect.json` because `grunt-contrib-connect` expects the property name to be `connect`.
 
 ```
 touch grunt_config/connect.json
