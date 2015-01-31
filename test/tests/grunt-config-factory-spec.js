@@ -15,7 +15,7 @@ requirerStub.require = function(filePath) {
   return filePath;
 };
 
-var config = factory.build('test/fakes');
+var config = factory.build('config');
 
 exports.testFactoryReturnsConfigWithTwoKeys = function (test) {
   test.expect(1);
@@ -25,7 +25,7 @@ exports.testFactoryReturnsConfigWithTwoKeys = function (test) {
 
 exports.testFactoryReturnsConfigWithCorrectValues = function (test) {
   test.expect(2);
-  test.ok(/a\-file\.json/.test(config['a-file']));
-  test.ok(/b\-file\.json/.test(config['b-file']));
+  test.ok(/config\/a\-file\.json/.test(config['a-file']));
+  test.ok(/config\/b\-file\.json/.test(config['b-file']));
   test.done();
 };
