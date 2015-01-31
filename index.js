@@ -1,4 +1,4 @@
-exports.build = function(dir) {
+exports.build = function(dir, context) {
   var
     _ = require('lodash'),
     fs = require('fs'),
@@ -11,6 +11,11 @@ exports.build = function(dir) {
     if(/.*\.json$/.test(file)) {
       var file_path = path.join(process.cwd(), dir, file);
       config[_.trim(file, '.json')] = requirer.require(file_path);
+    }
+
+    if(/.*\.js$/.test(file)) {
+      var file_path = path.join(process.cwd(), dir, file);
+      config[_.trim(file, '.js')] = requirer.require(file_path)(context);
     }
   });
   return config;
