@@ -1,4 +1,14 @@
-var FileHandler = require('../../lib/file-handler');
+var proxyquire = require('proxyquire').noCallThru(),
+    requirerStub = {},
+    FileHandler = proxyquire('../../lib/file-handler', {'./lib/requirer': requirerStub});
+
+requirerStub.require = function(filePath) {
+  if(/\.json$/.test(filePath))
+  return filePath;
+  return function(context) {
+    return 'FilePath: ' + filePath + '\nContext: ' + context;
+  };
+};
 
 exports.testJSONIsValid = function(test) {
   test.expect(1);
