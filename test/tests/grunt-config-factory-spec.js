@@ -1,4 +1,4 @@
-var factory = require('../index');
+var factory = require('../../index');
 
 exports.testFactoryReturnsConfigWithTwoKeys = function (test) {
   test.expect(1);

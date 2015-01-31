@@ -1,4 +1,4 @@
-var mockReturner = require('./mock-returner');
+var mockReturner = require('../mocks/mock-returner');
 
 exports.testReturnsContext = function(test) {
   test.expect(1);

@@ -1,6 +1,6 @@
-var mockReturner = require('./mocks/mock-returner'),
+var mockReturner = require('../mocks/mock-returner'),
     proxyquire = require('proxyquire').noCallThru(),
-    requirer = proxyquire('../lib/requirer', { 'filePath': mockReturner});
+    requirer = proxyquire('../../lib/requirer', { 'filePath': mockReturner});
 
 exports.testReturnsFunctionWhenContextNotDefined = function(test) {
   test.expect(1);
