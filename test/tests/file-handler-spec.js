@@ -1,8 +1,14 @@
 var fileHandler = require('../../lib/file-handler');
 
-exports.testIsValid = function(test) {
+exports.testJSONIsValid = function(test) {
   test.expect(1);
   test.strictEqual(fileHandler('file.json').isValid(), true);
+  test.done();
+};
+
+exports.testJSIsValid = function(test) {
+  test.expect(1);
+  test.strictEqual(fileHandler('file.js').isValid(), true);
   test.done();
 };
 
