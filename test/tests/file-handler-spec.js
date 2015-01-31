@@ -12,9 +12,15 @@ exports.testJSIsValid = function(test) {
   test.done();
 };
 
-exports.testIsNotValid = function(test) {
+exports.testTXTIsNotValid = function(test) {
   test.expect(1);
   test.strictEqual(fileHandler('file.txt').isValid(), false);
+  test.done();
+};
+
+exports.testMissingExtensionIsNotValid = function(test) {
+  test.expect(1);
+  test.strictEqual(fileHandler('file').isValid(), false);
   test.done();
 };
 
