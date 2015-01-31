@@ -1,43 +1,50 @@
-var fileHandler = require('../../lib/file-handler');
+var FileHandler = require('../../lib/file-handler');
 
 exports.testJSONIsValid = function(test) {
   test.expect(1);
-  test.strictEqual(fileHandler('file.json').isValid(), true);
+  var fileHandler = new FileHandler('file.json');
+  test.strictEqual(fileHandler.isValid(), true);
   test.done();
 };
 
 exports.testJSIsValid = function(test) {
   test.expect(1);
-  test.strictEqual(fileHandler('file.js').isValid(), true);
+  var fileHandler = new FileHandler('file.js');
+  test.strictEqual(fileHandler.isValid(), true);
   test.done();
 };
 
 exports.testTXTIsNotValid = function(test) {
   test.expect(1);
-  test.strictEqual(fileHandler('file.txt').isValid(), false);
+  var fileHandler = new FileHandler('file.txt');
+  test.strictEqual(fileHandler.isValid(), false);
   test.done();
 };
 
 exports.testMissingExtensionIsNotValid = function(test) {
   test.expect(1);
-  test.strictEqual(fileHandler('file').isValid(), false);
+  var fileHandler = new FileHandler('file');
+  test.strictEqual(fileHandler.isValid(), false);
   test.done();
 };
 
 exports.testRetrieveConfigurationKeyFromFilename = function(test) {
   test.expect(1);
-  test.equal(fileHandler('file.js').key(), 'file');
+  var fileHandler = new FileHandler('file.js');
+  test.equal(fileHandler.getKey(), 'file');
   test.done();
 };
 
 exports.testRetrieveConfigurationKeyFromFilePath = function(test) {
   test.expect(1);
-  test.equal(fileHandler('/some/path/file.js').key(), 'file');
+  var fileHandler = new FileHandler('/some/path/file.js');
+  test.equal(fileHandler.getKey(), 'file');
   test.done();
 };
 
 exports.testRetrieveFilePath = function(test) {
   test.expect(1);
-  test.equal(fileHandler('/some/path/file.js').path, '/some/path/file.js');
+  var fileHandler = new FileHandler('/some/path/file.js');
+  test.equal(fileHandler.path(), '/some/path/file.js');
   test.done();
 };
