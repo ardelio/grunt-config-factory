@@ -35,3 +35,9 @@ exports.testRetrieveConfigurationKeyFromFilePath = function(test) {
   test.equal(fileHandler('/some/path/file.js').key(), 'file');
   test.done();
 };
+
+exports.testRetrieveFilePath = function(test) {
+  test.expect(1);
+  test.equal(fileHandler('/some/path/file.js').path, '/some/path/file.js');
+  test.done();
+};
