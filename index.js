@@ -8,7 +8,7 @@ exports.build = function(dir) {
     files = fs.readdirSync(dir);
 
   files.forEach(function(file) {
-    if(/.*\.json$/.exec(file)) {
+    if(/.*\.json$/.test(file)) {
       var file_path = path.join(process.cwd(), dir, file);
       config[_.trim(file, '.json')] = requirer.require(file_path);
     }
