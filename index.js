@@ -3,12 +3,14 @@ exports.build = function(dir) {
     _ = require('lodash'),
     fs = require('fs'),
     path = require('path'),
+    requirer = require('./lib/requirer'),
     config = {},
     files = fs.readdirSync(dir);
+
   files.forEach(function(file) {
     if(/.*\.json$/.exec(file)) {
       var file_path = path.join(process.cwd(), dir, file);
-      config[_.trim(file, '.json')] = require(file_path);
+      config[_.trim(file, '.json')] = requirer.require(file_path);
     }
   });
   return config;

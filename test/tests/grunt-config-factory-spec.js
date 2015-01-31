@@ -1,15 +1,31 @@
-var factory = require('../../index');
+var proxyquire = require('proxyquire').noCallThru(),
+    fsStub = {},
+    requirerStub = {},
+    factory = proxyquire('../../index', {'fs': fsStub, './lib/requirer': requirerStub});
+
+fsStub.readdirSync = function() {
+  return [
+    'a-file.json',
+    'b-file.json',
+    'c-file.txt',
+  ];
+};
+
+requirerStub.require = function(filePath) {
+  return filePath;
+};
+
+var config = factory.build('test/fakes');
 
 exports.testFactoryReturnsConfigWithTwoKeys = function (test) {
   test.expect(1);
-  test.equal(Object.keys(factory.build('test/fakes')).length, 2);
+  test.equal(Object.keys(config).length, 2);
   test.done();
 };
 
-exports.testFactoryReturnsConfigWithCorrectKeys = function (test) {
+exports.testFactoryReturnsConfigWithCorrectValues = function (test) {
   test.expect(2);
-  var keys = Object.keys(factory.build('test/fakes'));
-  test.equal(keys[0], 'a-file');
-  test.equal(keys[1], 'b-file');
+  test.ok(/a\-file\.json/.test(config['a-file']));
+  test.ok(/b\-file\.json/.test(config['b-file']));
   test.done();
 };
