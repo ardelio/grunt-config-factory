@@ -4,7 +4,7 @@
   "description": "Reduce the size of Gruntfile.js and easily find configuration by building a config from individual JSON configuration files.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/nodeunit ./test/*"
+    "test": "./node_modules/.bin/nodeunit ./test/tests/*"
   },
   "repository": {
     "type": "git",
