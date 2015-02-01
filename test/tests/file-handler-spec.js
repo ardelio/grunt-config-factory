@@ -51,12 +51,6 @@ module.exports = {
     test.equal(fileHandler.getKey(), 'file');
     test.done();
   },
-  testRetrieveFilePath: function(test) {
-    test.expect(1);
-    var fileHandler = new this.FileHandler('/some/path/file.js');
-    test.equal(fileHandler.path(), '/some/path/file.js');
-    test.done();
-  },
   testLoadsJSONWithoutContext: function (test) {
     test.expect(1);
     var FileHandler = proxyquire('../../lib/file-handler', {'/some/path/file.json': 'I am json'});
