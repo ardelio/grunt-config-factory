@@ -113,6 +113,6 @@ The returned object would be the same as if we had returned:
 ```js
 {
   connect: require('./grunt_config/connect.json'),
-  karma: require('./grunt_config/karma.json')(context)
+  karma: require('./grunt_config/karma.js')(context)
 }
 ```
