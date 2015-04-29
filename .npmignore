@@ -2,3 +2,4 @@ test/
 snapci/
 npm-debug.log
 .travis.yml
+.jshintrc
