@@ -1,0 +1,10 @@
+{
+  "predef": ["exports","module","process","require"],
+  "undef": true,
+  "unused": true,
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "undef": true,
+  "unused": true
+}

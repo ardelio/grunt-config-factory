@@ -6,12 +6,13 @@ exports.build = function(dir, context) {
     config = {},
     files = fs.readdirSync(dir);
 
-  files.forEach(function(file) {
-    var filePath = path.join(process.cwd(), dir, file),
+  files.forEach(function(fileName) {
+    var filePath = path.join(process.cwd(), dir, fileName),
         file = FileHandler.new(filePath, context);
 
-    if(file.isValid())
+    if(file.isValid()) {
       config[file.getKey()] = file.load();
+    }
   });
   return config;
 };

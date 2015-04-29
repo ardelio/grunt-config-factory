@@ -1,11 +1,4 @@
-var proxyquire = require('proxyquire').noCallThru(),
-    requireStub = function(filePath) {
-      if(/\.json$/.test(filePath))
-        return filePath;
-      return function(context) {
-        return 'FilePath: ' + filePath + '\nContext: ' + context;
-      };
-    };
+var proxyquire = require('proxyquire').noCallThru();
 
 module.exports = {
   setUp: function(callback) {
